@@ -3,6 +3,15 @@ This repo provides the dataset introduced by our EMNLP 2025 paper "NormGenesis: 
 
 ---
 
+## 🗓️ Update History
+
+- **🏆 October 2025:** Nominated for **Outstanding Paper**, **SAC Highlight**, and **Resource Paper Award** at EMNLP 2025.  
+- **📘 September 2025:** Our paper was released on [arXiv](https://arxiv.org/abs/2509.18395).  
+- **🎤 August 2025:** Selected for **Main Conference (Oral Presentation)** at EMNLP 2025.  
+
+---
+
+
 ## 🚀 Release Plan
 We plan to release both the **code** and **dataset** after the EMNLP 2025 conference.
 
