@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="NormGenesis: Multicultural Dialogue Generation via Exemplar-Guided Social Norm Modeling and Violation Recovery">
+    <meta name="keywords" content="NormGenesis, NLP, Dialogue Generation, Social Norms, EMNLP 2025">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NormGenesis: Multicultural Dialogue Generation</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bulma & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <style>
+        /* Additional inline styles for quick fixes if needed */
+        .publication-title {
+            font-family: 'Google Sans', sans-serif;
+        }
+
+        .publication-authors {
+            font-family: 'Google Sans', sans-serif;
+        }
+
+        .hero-body {
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">NormGenesis: Multicultural Dialogue Generation via
+                            Exemplar-Guided Social Norm Modeling and Violation Recovery</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="#">Minki Hong</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                                <a href="#">Jangho Choi</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                                <a href="#">Jihie Kim</a><sup>1</sup>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>Dongguk University</span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><strong>EMNLP 2025 (Oral Presentation)</strong></span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- PDF Link. -->
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/abs/2509.18395"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a href="https://github.com/bk123477/NormGenesis"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+                                <!-- Dataset Link. -->
+                                <span class="link-block">
+                                    <a href="https://github.com/bk123477/NormGenesis"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="far fa-images"></i>
+                                        </span>
+                                        <span>Dataset</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Social norms govern culturally appropriate behavior in communication, enabling dialogue
+                            systems to produce responses that are not only coherent but also socially acceptable.
+                            We present <strong>NormGenesis</strong>, a multicultural framework for generating and
+                            annotating socially grounded dialogues across English, Chinese, and Korean.
+                            To model the dynamics of social interaction beyond static norm classification, we propose a
+                            novel dialogue type, <strong>Violation-to-Resolution (V2R)</strong>, which models the
+                            progression of conversations following norm violations through recognition and socially
+                            appropriate repair.
+                        </p>
+                        <p>
+                            To improve pragmatic consistency in underrepresented languages, we implement an
+                            exemplar-based iterative refinement early in the dialogue synthesis process.
+                            This design introduces alignment with linguistic, emotional, and sociocultural expectations
+                            before full dialogue generation begins.
+                            Using this framework, we construct a dataset of <strong>10,800 multi-turn dialogues</strong>
+                            annotated at the turn level for norm adherence, speaker intent, and emotional response.
+                            Human and LLM-based evaluations demonstrate that NormGenesis significantly outperforms
+                            existing datasets in refinement quality, dialogue naturalness, and generalization
+                            performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- News. -->
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">🔥 News</h2>
+                    <div class="content">
+                        <ul>
+                            <li><strong>[Nov 2025]</strong> We received the SAC Highlights Award at EMNLP 2025! 🏆</li>
+                            <li><strong>[Oct 2025]</strong> Nominated for <strong>Outstanding Paper</strong>,
+                                <strong>SAC Highlight</strong>, and <strong>Resource Paper Award</strong> at EMNLP 2025.
+                                🏆</li>
+                            <li><strong>[Sep 2025]</strong> Our paper was released on <a
+                                    href="https://arxiv.org/abs/2509.18395">arXiv</a>. 📘</li>
+                            <li><strong>[Aug 2025]</strong> Selected for <strong>Main Conference (Oral
+                                    Presentation)</strong> at EMNLP 2025. 🎤</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--/ News. -->
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Method. -->
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">🚀 Methodology</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            NormGenesis consists of four core stages designed to model social communication effectively:
+                        </p>
+                        <div class="columns is-multiline">
+                            <div class="column is-6">
+                                <div class="box">
+                                    <h4 class="title is-5">1. Norm and Style Design</h4>
+                                    <p>We constructed a taxonomy of 12 conversational social norm categories (e.g.,
+                                        Apology, Empathy, Respect) and defined 120 culturally grounded subnorms per
+                                        language. We also defined pragmatic parameters like tone, honorifics, and
+                                        relational distance.</p>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <div class="box">
+                                    <h4 class="title is-5">2. Scenario-Situation Constructor</h4>
+                                    <p>We generate scenario-situation pairs labeled as Norm Adherence, Norm Violation,
+                                        or Violation-to-Resolution (V2R). V2R models post-violation repair strategies,
+                                        capturing core aspects of interactional competence.</p>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <div class="box">
+                                    <h4 class="title is-5">3. Exemplar-Based Iterative Refinement</h4>
+                                    <p>To address pragmatic mismatches in low-resource languages, we use an iterative
+                                        refinement loop. The model retrieves semantically and structurally similar
+                                        exemplars to guide the revision of scenarios and situations, ensuring cultural
+                                        alignment.</p>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <div class="box">
+                                    <h4 class="title is-5">4. Multi-Turn Dialogue Generator</h4>
+                                    <p>Refined scenarios are expanded into multi-turn dialogues (5-15 turns). Each
+                                        utterance is annotated with norm adherence, speaker intent, and emotional state,
+                                        grounded in dialogue act theory.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/ Method. -->
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Evaluation. -->
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">📊 Evaluation & Results</h2>
+                    <div class="content has-text-justified">
+                        <p>We evaluated our framework along three axes: Refinement Quality (RQ), Dialogue Quality (DQ),
+                            and Generalization Quality (GQ).</p>
+
+                        <h4 class="title is-4">Refinement Quality (RQ)</h4>
+                        <p>
+                            Our exemplar-based refinement consistently improved generation quality in Korean and
+                            Chinese.
+                            In Korean, linguistic quality improved substantially (3.59 &rarr; 4.91), accompanied by
+                            gains in norm alignment and semantic fidelity.
+                        </p>
+
+                        <h4 class="title is-4">Dialogue Quality (DQ)</h4>
+                        <p>
+                            Evaluations across six dimensions (Consistency, Naturalness, Relevance, Emotion
+                            Appropriateness, Norm Appropriateness, Scenario Coherence) showed that dialogues from
+                            Adherence and V2R categories achieved high ratings (avg. > 4.9).
+                            Human evaluations strongly correlated with LLM-based assessments (r > 0.9).
+                        </p>
+
+                        <h4 class="title is-4">Generalization Quality (GQ)</h4>
+                        <p>
+                            Models trained on NormGenesis datasets significantly outperformed baselines (NORM DIAL,
+                            SODA).
+                            In A/B preference testing, GPT-4o-mini trained on our data was preferred in 65% (English)
+                            and 75% (Chinese) of cases over NORM DIAL.
+                        </p>
+
+                        <h4 class="title is-4">Impact of V2R</h4>
+                        <p>
+                            Models trained with Violation-to-Resolution (V2R) data were preferred in 82% of cases in
+                            ethically sensitive scenarios, demonstrating superior empathy and ability to model norm
+                            repair.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Evaluation. -->
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Evaluation Scope. -->
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">🌍 Evaluation Scope</h2>
+                    <div class="content">
+                        <h4 class="title is-4">Cultures Covered</h4>
+                        <div class="columns is-centered">
+                            <div class="column has-text-centered">
+                                <span class="icon is-large"><i class="fas fa-flag-usa fa-3x"></i></span>
+                                <p>American</p>
+                            </div>
+                            <div class="column has-text-centered">
+                                <span class="icon is-large"><i class="fas fa-flag fa-3x"
+                                        style="color: #de2910;"></i></span>
+                                <p>Chinese</p>
+                            </div>
+                            <div class="column has-text-centered">
+                                <span class="icon is-large"><i class="fas fa-flag fa-3x"
+                                        style="color: #0047a0;"></i></span>
+                                <p>Korean</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/ Evaluation Scope. -->
+        </div>
+    </section>
+
+
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@inproceedings{hong2025normgenesis,
+  title={NormGenesis: Multicultural Dialogue Generation via Exemplar-Guided Social Norm Modeling and Violation Recovery},
+  author={Hong, Minki and Choi, Jangho and Kim, Jihie},
+  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
+  pages={33781--33819},
+  year={2025}
+}</code></pre>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <a class="icon-link" href="https://arxiv.org/abs/2509.18395">
+                    <i class="fas fa-file-pdf"></i>
+                </a>
+                <a class="icon-link" href="https://github.com/bk123477/NormGenesis" class="external-link" disabled>
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This website is licensed under a <a rel="license"
+                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                        <p>
+                            Template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+                            and <a href="https://github.com/seochan99/ECB">ECB</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
