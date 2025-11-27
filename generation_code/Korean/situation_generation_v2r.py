@@ -1,0 +1,98 @@
+'''
+Module 2: Scenario-Situation Constructor - Korean/V2R
+
+Model Configuration: gpt-4.1
+Author: 
+    Minki Hong (⚠️ Contact Me: jackyh1@dgu.ac.kr)
+    Jangho Choi (⚠️ Contact Me: 2025120382@dgu.ac.kr)
+'''
+
+# Import libraries
+import os
+from pydantic import BaseModel
+import openai
+from datasets import load_dataset
+import json, jsonlines
+import re
+import random
+import numpy as np
+import sys
+import pandas as pd
+from tqdm import tqdm
+import time
+
+# Setting API
+client = openai.OpenAI(api_key=os.getenv("YOUR_OPEN_API_KEY"))
+
+base_model = 'gpt-4.1'
+MAX_TOKENS=1024
+OUTPUT_DIR = 'YOUR DIRECTORY'
+
+# Load CSV dataset
+file_path = 'YOUR_PATH/situation_korean_v2r.csv'
+df = pd.read_csv(file_path, usecols=["Category", "Norm", "Scenario", "Situation"])
+
+# Build prompt
+def build_v2r_prompt(row):
+    return f"""\
+다음은 한국의 사회적 규범에 대한 설명과 준수 예시입니다.
+[사회적 규범 카테고리]
+{row['Category']}
+
+[사회적 규범 설명]
+{row['Norm']}
+
+[규범을 준수한 Scenario]
+{row['Scenario']}
+
+[규범을 준수한 Situation]
+{row['Situation']}
+
+이제 위 규범을 위반하는 Scenario와 Situation을 생성하세요. 단, 위반은 명백하지만 해당 규범 위반을 인지한 뒤, 해결하려는 모습이 드러나야 합니다. 적극적으로 규범 위반을 먼저 발생시킨 뒤, 해결하세요. 또한, 현실적인 흐름과 감정 표현, 반응이 자연스러워야 합니다. 인물 간의 관계, 장소, 감정 흐름이 자연스럽게 드러나도록 구성하세요. 표현은 너무 짧지 않게, 예시 수준의 길이로 작성하세요.
+
+[규범을 위반한 뒤 해결한 Scenario]:
+[규범을 위반한 뒤 해결한 Situation]:
+"""
+
+# GPT response parser
+def parse_gpt_v2r_output(response_text):
+    if "[Situation with Norm Violation and Resolution]" in response_text:
+        parts = response_text.split("[Situation with Norm Violation and Resolution]")
+        scenario = parts[0].replace("[Scenario with Norm Violation and Resolution]", "").strip()
+        situation = parts[1].strip()
+        return scenario, situation
+    else:
+        return response_text.strip(), ""
+
+# Call GPT API
+def generate_v2r(row, model=base_model, temperature=0.8, max_tokens=1024):
+    prompt = build_v2r_prompt(row)
+    response = client.chat.completions.create(
+        model=base_model,
+        messages=[{"role":"user", "content": prompt}],
+        temperature=temperature,
+        max_tokens=max_tokens
+    )
+    content = response.choices[0].message.content
+    return parse_gpt_v2r_output(content)
+
+# Construct dataset
+v2r_scenarios = []
+v2r_situations = []
+
+for idx, row in tqdm(df.iterrows(), total=len(df), desc="Generating V2R"):
+    try:
+        scenario, situation = generate_v2r(row)
+        v2r_scenarios.append(scenario)
+        v2r_situations.append(situation)
+        time.sleep(1.5)
+    except Exception as e:
+        v2r_scenarios.append("Error")
+        v2r_situations.append(str(e))
+
+# Save to XLSX file
+new_df = pd.DataFrame({
+    'v2r_Scenario': v2r_scenarios,
+    'v2r_Situation': v2r_situations
+})
+new_df.to_csv("situation_korean_v2r.csv", index=False, encoding='utf-8-sig')
