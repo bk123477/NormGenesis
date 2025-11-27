@@ -2,10 +2,19 @@
 
 This repo provides the dataset introduced by our EMNLP 2025 paper "NormGenesis: Multicultural Dialogue Generation via Exemplar-Guided Social Norm Modeling and Violation Recovery".
 
+<div align="center">
+
+[![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://bk123477.github.io/NormGenesis/)
+[![arXiv](https://img.shields.io/badge/arXiv-2509.18395-b31b1b.svg)](https://arxiv.org/abs/2509.18395)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
+
+</div>
+
 ---
 
 ## 🗓️ Update History
 
+- **🚀 November 2025:** **Code**, **Dataset**, and **Project Page** have been released!
 - **🏆 November 2025:** We received the SAC Highlights Award at EMNLP 2025!
 - **🏆 October 2025:** Nominated for **Outstanding Paper**, **SAC Highlight**, and **Resource Paper Award** at EMNLP 2025.  
 - **📘 September 2025:** Our paper was released on [arXiv](https://arxiv.org/abs/2509.18395).  
@@ -96,8 +105,7 @@ We plan to release both the **code** and **dataset** after the EMNLP 2025 confer
 
 - [✅] **Code**  
 - [✅] **Dataset**
-- [✅] **Paper**
-- [] **Project Page**
+- [✅] **Project Page**
 
 ---
 
